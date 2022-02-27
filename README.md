@@ -2,7 +2,11 @@
 # docker-dokuwiki
 
 - nginx/logs   
+   - logs 日志文件
 - nginx/www
-
-> logs 日志文件
-> www  源码文件
+   - www  源码文件
+ 
+# 环境
+- Nginx
+- php7.4
+- dokuwiki
