@@ -1,0 +1,21 @@
+version: "2.1"
+services:
+    nginx:
+        image: nginx
+        ports:
+            - "80:80"
+        volumes: 
+            - $PWD/nginx/www:/usr/share/nginx/html
+            - $PWD/nginx/conf:/etc/nginx/conf.d
+            - $PWD/nginx/logs:/var/log/nginx
+        networks:
+            - lnmp-network
+    php:
+        image: php:7.4-fpm
+        volumes:
+            - $PWD/nginx/www:/www
+        networks:
+            - lnmp-network
+networks: 
+    lnmp-network:
+      name: lnmp-dokuwiki-network
